@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import ProductCard from './components/productCard/productCard.jsx';
+import ProductCard from './components/ProductCard.jsx';
 
 function App() {
 
@@ -13,7 +13,11 @@ function App() {
   }
   return (
     <>
-    <ProductCard product={iphone}/>
+    <h1>Catalogo di vendita</h1>
+      <div id="catalogue">
+        <ProductCard product={iphone}/>
+      </div>
+      
     </>
   )
 }
