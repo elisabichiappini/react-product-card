@@ -1,25 +1,22 @@
-import { useState } from 'react';
 import './App.css';
-import ProductCard from './components/ProductCard.jsx';
+import ProductCard from './components/ProductCard';
+import { getAllProducts } from './assets/data/products.js';
 
 function App() {
+  const products = getAllProducts();
+  const blue = getProductByColor('blue');
 
-  const iphone = {
-    title: 'iPhone 15',
-    peso: 500,
-    color: 'blue',
-    img: 'iphone-blue.png',
-    price: 1000
-  }
   return (
     <>
-    <h1>Catalogo di vendita</h1>
-      <div id="catalogue">
-        <ProductCard product={iphone}/>
+      <h2>Prodotti</h2>
+      <div id="catalogue-all">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
-      
+
     </>
-  )
+  );
 }
 
 export default App;
